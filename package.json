@@ -1,0 +1,17 @@
+{
+  "name": "elbajel",
+  "version": "0.0.1",
+  "description": "Electron Executable Version of Bajel",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "electron ."
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "bajel": "^1.0.1",
+    "electron": "^11.2.1"
+  }
+}
