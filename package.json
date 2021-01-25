@@ -11,7 +11,9 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "bajel": "^1.0.1",
     "electron": "^11.2.1"
+  },
+  "dependencies": {
+    "bajel": "^1.0.1"
   }
 }
