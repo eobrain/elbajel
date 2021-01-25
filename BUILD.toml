@@ -1,5 +1,14 @@
-[start]
-exec="electron ."
+[binaries]
+deps = [
+    "out/make/deb/x64/elbajel_0.0.1_amd64.deb",
+    "out/make/rpm/x64/elbajel-0.0.1-1.x86_64.rpm"
+    ]
 
-[make]
-exec="electron-forge make"
+[start]
+exec = "electron ."
+
+["out/make/deb/x64/elbajel_0.0.1_amd64.deb"]
+exec = "electron-forge make"
+
+["out/make/rpm/x64/elbajel-0.0.1-1.x86_64.rpm"]
+deps = ["out/make/deb/x64/elbajel_0.0.1_amd64.deb"]
