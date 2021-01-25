@@ -1,2 +1,5 @@
 [start]
 exec="electron ."
+
+[make]
+exec="electron-forge make"
