@@ -1,5 +1,5 @@
 const { app, BrowserWindow, ipcMain } = require('electron')
-const bajel = require('../bajel/src/index.js')
+const build = require('../bajel/src/index.js')
 const buildfile = require('../bajel/src/buildfile.js')
 
 async function createWindow () {
@@ -15,12 +15,16 @@ async function createWindow () {
   win.loadFile('index.html')
   win.webContents.openDevTools()
   // console.log(JSON.stringify(await buildfile()))
-  // ipcMain.handle('perform-action', (event, ...args) => {
-  //  // ... do actions on behalf of the Renderer
-  // })
 
   win.webContents.on('did-finish-load', async () => {
-    win.webContents.send('buildfile', await buildfile())
+    const bf = await buildfile()
+    win.webContents.send('buildfile', bf)
+
+    ipcMain.handle('execute', async (event, target) => {
+      console.log('Execute', target)
+      const [code] = await build(bf, [target])
+      console.log({ code })
+    })
   })
 }
 

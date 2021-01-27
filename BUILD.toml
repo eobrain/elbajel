@@ -1,13 +1,14 @@
 [binaries]
 deps = [
-    "out/make/deb/x64/elbajel_0.0.1_amd64.deb",
-    "out/make/rpm/x64/elbajel-0.0.1-1.x86_64.rpm"
-    ]
+  "out/make/deb/x64/elbajel_0.0.1_amd64.deb",
+  "out/make/rpm/x64/elbajel-0.0.1-1.x86_64.rpm",
+]
 
 [start]
 exec = "electron ."
 
 ["out/make/deb/x64/elbajel_0.0.1_amd64.deb"]
+deps = ["main.js", "window.js"]
 exec = "electron-forge make"
 
 ["out/make/rpm/x64/elbajel-0.0.1-1.x86_64.rpm"]
