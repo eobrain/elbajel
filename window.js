@@ -1,6 +1,8 @@
 const { ipcRenderer } = require('electron')
 
-/* global Mustache, listElement, templateElement */
+/* global alert Mustache, listElement, templateElement */
+
+const execute = target => alert(target)
 
 // ipcRenderer.invoke('perform-action', ...args)
 ipcRenderer.on('buildfile', (event, buildfile) => {

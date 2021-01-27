@@ -18,7 +18,7 @@
     <h1>Bajel</h1>
     <dl id="listElement">
         <script id="templateElement" type="x-tmpl-mustache">
-        <dt>{{target}}</dt>
+        <dt onclick="execute('{{target}}')">{{target}}</dt>
         <dd>
             <ul>
                 {{#deps}}
