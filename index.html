@@ -1,16 +1,19 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <meta charset="UTF-8">
     <title>Hello World!</title>
-    <meta http-equiv="Content-Security-Policy" content="script-src 'self' 'unsafe-inline';" />
+    <meta http-equiv="Content-Security-Policy"
+        content="script-src 'self' 'unsafe-inline';" />
+    <script>delete module.exports</script>
+    <script src="./window.js" defer></script>
+
 </head>
-<body style="background: white;">
-    <h1>Hello World!</h1>
-    <p>
-        We are using node <script>document.write(process.versions.node)</script>,
-        Chrome <script>document.write(process.versions.chrome)</script>,
-        and Electron <script>document.write(process.versions.electron)</script>.
-    </p>
+
+<body>
+    <h1>Bajel</h1>
+    <div id="fooElement"></div>
 </body>
+
 </html>
