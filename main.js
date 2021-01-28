@@ -7,13 +7,13 @@ async function createWindow () {
     width: 800,
     height: 600,
     webPreferences: {
-      devTools: true,
+      // devTools: true,
       nodeIntegration: true
     }
   })
 
   win.loadFile('index.html')
-  win.webContents.openDevTools()
+  // win.webContents.openDevTools()
   // console.log(JSON.stringify(await buildfile()))
 
   win.webContents.on('did-finish-load', async () => {
@@ -22,8 +22,12 @@ async function createWindow () {
 
     ipcMain.handle('execute', async (event, target) => {
       console.log('Execute', target)
-      const [code] = await build(bf, [target])
-      console.log({ code })
+      try {
+        const [code, out, err] = await build(bf, [undefined, undefined, target])
+        console.log(`\n======\n${out}\n======\n${err}\n======\nstatus=${code}`)
+      } catch (e) {
+        console.log(e)
+      }
     })
   })
 }

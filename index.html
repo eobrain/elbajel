@@ -2,8 +2,10 @@
 <html>
 
 <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta charset="UTF-8">
-    <title>Hello World!</title>
+    <title>Bajel</title>
+    <link rel="stylesheet" href="./sakura.css">
     <meta http-equiv="Content-Security-Policy"
         content="script-src 'self' 'unsafe-inline';" />
     <script>delete module.exports</script>
@@ -15,20 +17,18 @@
 </head>
 
 <body>
-    <h1>Bajel</h1>
-    <dl id="listElement">
-        <script id="templateElement" type="x-tmpl-mustache">
-        <dt onclick="execute('{{target}}')">{{target}}</dt>
-        <dd>
-            <ul>
-                {{#deps}}
-                <li>{{.}}</li>
-                {{/deps}}
+    <section>
+            <h1> Bajel</h1>
+            <ul id="listElement">
+                <script id="templateElement" type="x-tmpl-mustache">
+                    <li>
+                        <button
+                            onclick="execute('{{target}}')">{{target}}</button>
+                        <code>{{exec}}</code>
+                    </li>
+                </script>
             </ul>
-            <code>{{exec}}</code>
-        </dd>
-      </script>
-    </dl>
+    </section>
 </body>
 
 </html>
