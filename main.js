@@ -7,14 +7,13 @@ async function createWindow () {
     width: 800,
     height: 600,
     webPreferences: {
-      // devTools: true,
+      devTools: true,
       nodeIntegration: true
     }
   })
 
   win.loadFile('index.html')
-  // win.webContents.openDevTools()
-  // console.log(JSON.stringify(await buildfile()))
+  win.webContents.openDevTools()
 
   win.webContents.on('did-finish-load', async () => {
     const bf = await buildfile()

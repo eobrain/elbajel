@@ -1,8 +1,5 @@
 [binaries]
-deps = [
-  "out/make/deb/x64/elbajel_0.0.1_amd64.deb",
-  "out/make/rpm/x64/elbajel-0.0.1-1.x86_64.rpm",
-]
+deps = ["out/make/deb/x64/elbajel_0.0.1_amd64.deb",]
 
 [install]
 deps=["/usr/bin/elbajel"]
@@ -14,13 +11,9 @@ exec = "electron ."
 deps = ["main.js", "window.js"]
 exec = "electron-forge make"
 
-["out/make/rpm/x64/elbajel-0.0.1-1.x86_64.rpm"]
-deps = ["out/make/deb/x64/elbajel_0.0.1_amd64.deb"]
-
 ["/usr/bin/elbajel"]
 deps=["out/make/deb/x64/elbajel_0.0.1_amd64.deb"]
 exec = "sudo dpkg -i $<"
 
 [remove]
-deps=["/usr/bin/elbajel"]
 exec="sudo apt-get remove elbajel"
